@@ -1,7 +1,7 @@
 # LRS-slit-simulations
-simulated data for LRS slit
+Simulated data for LRS slit
 
-Contents of this repository
+### Contents of this repository
 This repository will be used to collect scripts to generate simulated data with MIRISim for LRS slit observations with MIRI. These data can be used for DMS or pipeline testing purposes. The following cases will be covered:
 
 LRS slit observations, point source, using the 2-point along-slit dither
@@ -16,7 +16,7 @@ The scope of each of these simulations is described further in the README in eac
 
 The output format of MIRISim data is compatible with the JWST calibration pipeline.
 
-Dependencies
+### Dependencies
 The following packages are called in these scripts:
 
 numpy
@@ -27,5 +27,5 @@ The simulations are designed to be run using MIRISim, the publicly available dat
 
 MIRISim is therefore also called extensively in the scripts and notebooks.
 
-Authors
+### Authors
 Sarah Kendrew, sarah.kendrew AT esa.int
