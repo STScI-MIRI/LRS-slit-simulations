@@ -7,12 +7,11 @@ This repository will be used to collect scripts to generate simulated data with 
 * LRS slit observations, point source, using the 2-point along-slit dither
 * LRS slit observations, point source, no dithering (target at the slit centre)
 
-Simulations will be grouped in dedicated folders:
+Simulations for different putposes will be placed in dedicated folders:
 
-* LRS-slit-dither
-* LRS-slit-nodither
+* NOps7: preparing the simulated dataset for NOps (see APT PID 623, Obs 47)
 
-The scope of each of these simulations is described further in the README in each folder. The output format of MIRISim data is compatible with the JWST calibration pipeline.
+There may be further README files in directories with further specifics.
 
 ### Dependencies
 The following packages are called in these scripts:
