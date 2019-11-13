@@ -20,7 +20,7 @@ To run the simulation with the custom pattern of pointings (this will simulate a
 * rename the new pointings file lrs\_recommended\_dither.dat
 
 You should then be able to return to the simulation folder, and run the script:
-`python lrsslit\_nops7\_sim.py`
+`python lrsslit_nops7_sim.py`
 
 
 ### Dependencies
