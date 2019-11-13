@@ -1,0 +1,17 @@
+# APT Output Product
+# 
+# APT Version: Version 27.3  JWST PRD: PRDOPSSOC-M-025 
+# Date: Wed Nov 13 19:59:17 GMT 2019
+
+JWST Pointing Report for JWST Approved Proposal 623 (623_nops7.aptx)
+
+========================================
+* LRS FS   OPS7-OTB-20191216 (Obs 47)
+** Visit 47:1
+Tar Tile Exp Dith Aperture Name             Target       RA         Dec        BaseX    BaseY    DithX    DithY    V2       V3       IdlX     IdlY   Level      Type      ExPar  DkPar   dDist          
+  0    0   0    0 MIRIM_TALRS               7 TARGET2-  +90.75542  -66.56056   -0.009   -0.007   +0.000   +0.000 -425.059 -401.972   -0.009   -0.007 TARGET     T_ACQ          0      0  0.000 (base)
+  1    1   1    1 MIRIM_SLIT                7 TARGET2-  +90.75542  -66.56056   +0.000   +0.000   -0.944   -0.239 -413.407 -401.000   -0.944   -0.239 TARGET     SCIENCE      867   3612 11.693          
+  1    1   1    2 MIRIM_SLIT                7 TARGET2-  +90.75542  -66.56056   +0.000   +0.000   +0.954   -0.231 -415.299 -400.848   +0.954   -0.231 DITHER     SCIENCE      867      0  1.898          
+  1    2   1    1 MIRIM_SLIT                7 TARGET2-  +90.75542  -66.56056   +0.000   +0.000   -0.944   +0.230 -413.371 -400.532   -0.944   +0.230 TILE       SCIENCE      867      0  1.954          
+  1    2   1    2 MIRIM_SLIT                7 TARGET2-  +90.75542  -66.56056   +0.000   +0.000   +0.954   +0.238 -415.263 -400.380   +0.954   +0.238 DITHER     SCIENCE      867      0  1.898          
+
