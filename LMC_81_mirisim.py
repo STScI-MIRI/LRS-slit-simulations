@@ -47,47 +47,13 @@ scene_config = SceneConfig.makeScene(loglevel=0,
 
 # FIRST SIMULATION: NO DITHERING
 
-sim_config_nodither = SimConfig.makeSim(
-    name = 'LMC-81_lrsslit_nodither',    # name given to simulation
-    scene = 'lmc_81_scene.ini', # name of scene file to input
-    rel_obsdate = 1.0,          # relative observation date (0 = launch, 1 = end of 5 yrs)
-    POP = 'IMA',                # Component on which to center (Imager or MRS)
-    ConfigPath = 'LRS_SLIT',  # Configure the Optical path (MRS sub-band)
-    Dither = False,             # Don't Dither
-    StartInd = 1,               # start index for dither pattern [NOT USED HERE]
-    NDither = 2,                # number of dither positions [NOT USED HERE]
-    DitherPat = 'lrs_recommended_dither.dat', # dither pattern to use [NOT USED HERE]
-    disperser = 'SHORT',        # [NOT USED HERE]
-    detector = 'SW',            # [NOT USED HERE]
-    mrs_mode = 'SLOW',          # [NOT USED HERE]
-    mrs_exposures = 10,          # [NOT USED HERE]
-    mrs_integrations = 3,       # [NOT USED HERE]
-    mrs_frames = 5,             # [NOT USED HERE]
-    ima_exposures = 1,          # number of exposures
-    ima_integrations = 1,       # number of integrations
-    ima_frames = 15,             # number of groups (for MIRI, # Groups = # Frames)
-    ima_mode = 'FAST',          # Imager read mode (default is FAST ~ 2.3 s)
-    filter = 'P750L',          # Imager Filter to use
-    readDetect = 'FULL'         # Portion of detector to read out
-)
-
-
-sim_config_nodither.write('LMC-81_simulation_slit_nodither.ini')
-simulator_config = SimulatorConfig.from_default()
-
-lmc81_sim = MiriSimulation(sim_config_nodither, scene_config, simulator_config)
-lmc81_sim.run()
-
-
-
-# SECOND SIMULATION: ALONG SLIT NOD
-#sim_config_dither = SimConfig.makeSim(
-#    name = 'LMC-81_lrsslit_dither',    # name given to simulation
+#sim_config_nodither = SimConfig.makeSim(
+#    name = 'LMC-81_lrsslit_nodither',    # name given to simulation
 #    scene = 'lmc_81_scene.ini', # name of scene file to input
 #    rel_obsdate = 1.0,          # relative observation date (0 = launch, 1 = end of 5 yrs)
 #    POP = 'IMA',                # Component on which to center (Imager or MRS)
 #    ConfigPath = 'LRS_SLIT',  # Configure the Optical path (MRS sub-band)
-#    Dither = True,             # Nod along the slit
+#    Dither = False,             # Don't Dither
 #    StartInd = 1,               # start index for dither pattern [NOT USED HERE]
 #    NDither = 2,                # number of dither positions [NOT USED HERE]
 #    DitherPat = 'lrs_recommended_dither.dat', # dither pattern to use [NOT USED HERE]
@@ -105,12 +71,46 @@ lmc81_sim.run()
 #    readDetect = 'FULL'         # Portion of detector to read out
 #)
 
-#sim_config_dither.write('LMC-81_simulation_slitdither.ini')
 
+#sim_config_nodither.write('LMC-81_simulation_slit_nodither.ini')
 #simulator_config = SimulatorConfig.from_default()
 
-#lmc81_sim2 = MiriSimulation(sim_config_dither, scene_config, simulator_config)
-#lmc81_sim2.run()
+#lmc81_sim = MiriSimulation(sim_config_nodither, scene_config, simulator_config)
+#lmc81_sim.run()
+
+
+
+# SECOND SIMULATION: ALONG SLIT NOD
+sim_config_dither = SimConfig.makeSim(
+    name = 'LMC-81_lrsslit_dither',    # name given to simulation
+    scene = 'lmc_81_scene.ini', # name of scene file to input
+    rel_obsdate = 1.0,          # relative observation date (0 = launch, 1 = end of 5 yrs)
+    POP = 'IMA',                # Component on which to center (Imager or MRS)
+    ConfigPath = 'LRS_SLIT',  # Configure the Optical path (MRS sub-band)
+    Dither = True,             # Nod along the slit
+    StartInd = 1,               # start index for dither pattern [NOT USED HERE]
+    NDither = 2,                # number of dither positions [NOT USED HERE]
+    DitherPat = 'lrs_recommended_dither.dat', # dither pattern to use [NOT USED HERE]
+    disperser = 'SHORT',        # [NOT USED HERE]
+    detector = 'SW',            # [NOT USED HERE]
+    mrs_mode = 'SLOW',          # [NOT USED HERE]
+    mrs_exposures = 10,          # [NOT USED HERE]
+    mrs_integrations = 3,       # [NOT USED HERE]
+    mrs_frames = 5,             # [NOT USED HERE]
+    ima_exposures = 1,          # number of exposures
+    ima_integrations = 1,       # number of integrations
+    ima_frames = 15,             # number of groups (for MIRI, # Groups = # Frames)
+    ima_mode = 'FAST',          # Imager read mode (default is FAST ~ 2.3 s)
+    filter = 'P750L',          # Imager Filter to use
+    readDetect = 'FULL'         # Portion of detector to read out
+)
+
+sim_config_dither.write('LMC-81_simulation_slitdither.ini')
+
+simulator_config = SimulatorConfig.makeSimulator(take_webbPsf=True)
+
+lmc81_sim2 = MiriSimulation(sim_config_dither, scene_config, simulator_config)
+lmc81_sim2.run()
 
 
 # THIRD SIMULATION: SLITLESS
